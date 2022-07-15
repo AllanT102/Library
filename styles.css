@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,600&family=Lobster&family=Oswald&family=Source+Sans+Pro:ital,wght@1,600&family=Staatliches&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Lobster", cursive;
+  color: white;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.top-bar {
+  background-color: #5DA3FA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+}
+
+.add-button {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+  background-color: #207398;
+}
+.add-button:hover .vertical-line, .add-button:hover .horizontal-line {
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.vertical-line {
+  background-color: black;
+  width: 10px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.horizontal-line {
+  width: 40px;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, min-max(150px, 1fr));
+}
+
+.card {
+  background-color: blue;
+}
+
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.5s ease-in-out;
+  width: 40%;
+  height: 60%;
+  min-width: 400px;
+  min-height: 400px;
+  z-index: 1;
+  background-color: white;
+}
+
+.pop-up.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+
+.overlay.active {
+  pointer-events: all;
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=styles.css.map */
