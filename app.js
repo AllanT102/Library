@@ -4,6 +4,8 @@ const addBookButton = document.querySelector('.add-button')
 const closeAddButton = document.querySelector('.close-button')
 const popup = document.querySelector('.pop-up')
 const overlay = document.querySelector('.overlay')
+const formInputs = document.querySelectorAll('.form-input')
+const addConf = document.querySelector('.add-conf')
 
 const bookFactory = (title, pages, author) => {
     return { title, pages, author }
@@ -41,11 +43,19 @@ addBookButton.addEventListener('click', () => {
 closeAddButton.addEventListener('click', () => {
     popup.classList.remove('active')
     overlay.classList.remove('active')
+    clearInputs()
 })
 
 overlay.addEventListener('click', () => {
     if (overlay.classList.contains('active')) {
         popup.classList.remove('active')
         overlay.classList.remove('active')
+        clearInputs()
     }
 })
+
+function clearInputs() {
+    formInputs.forEach(input => {
+        input.value = ''
+    })
+}

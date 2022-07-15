@@ -70,11 +70,15 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: 0.5s ease-in-out;
   width: 40%;
-  height: 60%;
+  height: 45%;
   min-width: 400px;
-  min-height: 400px;
+  min-height: 450px;
   z-index: 1;
   background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pop-up.active {
@@ -93,6 +97,60 @@ body {
 .overlay.active {
   pointer-events: all;
   opacity: 0.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  gap: 40px;
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  color: black;
+  font-size: 1.5em;
+}
+
+.close-button {
+  color: black;
+  border: none;
+  font-size: 1.5em;
+  border-radius: 15px;
+  padding-right: 10px;
+  background-color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.form-title {
+  text-align: center;
+  color: black;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+input {
+  color: black;
+}
+
+.add-conf {
+  width: 75px;
+  height: 40px;
+  font-size: 30px;
+  background-color: #207398;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
