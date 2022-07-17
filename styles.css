@@ -55,22 +55,33 @@ body {
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-template-rows: repeat(auto-fit, min-max(150px, 1fr));
+  grid-template-rows: repeat(5, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 5% 5%;
+  padding: 5%;
 }
 
 .card {
-  background-color: blue;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2em;
+}
+.card h1, .card p {
+  color: black;
+  margin: 0;
 }
 
 .pop-up {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) perspective(1px) scale(0);
   transition: 0.5s ease-in-out;
-  width: 40%;
-  height: 45%;
+  width: 30%;
+  height: 50%;
   min-width: 400px;
   min-height: 450px;
   z-index: 1;
@@ -82,7 +93,7 @@ body {
 }
 
 .pop-up.active {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) perspective(1px) scale(1);
 }
 
 .overlay {
@@ -140,6 +151,7 @@ label {
 
 input {
   color: black;
+  font-size: 1.1em;
 }
 
 .add-conf {
@@ -151,6 +163,12 @@ input {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.error {
+  color: black;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
